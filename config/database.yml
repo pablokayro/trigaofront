@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: 123456
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: estoque_trigao_development
+
+test:
+  <<: *default
+  database: estoque_trigao_test
+
+production:
+  <<: *default
+  database: estoque_trigao_production

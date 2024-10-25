@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Estoque Trigao" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <!-- Manifesto e Favicon -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon">
+    <link rel="icon" href="<%= asset_path 't.png' %>" type="image/png">
+    <link rel="apple-touch-icon" href="<%= asset_path 'name_trigao.png' %>">
+
+    <!-- Folhas de estilo -->
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "login", "data-turbo-track": "reload" %> <!-- Adicionando o login.css -->
+
+    <!-- Mapas de fontes e outros arquivos necessários -->
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <!-- Conteúdo renderizado dinamicamente -->
+    <%= yield %>
+  </body>
+</html>
